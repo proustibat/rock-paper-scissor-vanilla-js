@@ -20,8 +20,15 @@
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
 
-  <link rel="manifest" href="site.webmanifest">
+  <!-- Manifest File link -->
+  <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#fafafa">
+
+  <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+  <meta name="theme-color" content="black">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 
 <body class="kirang-haerang-regular">
@@ -65,6 +72,17 @@
   </section>
 </main>
 
+  <script>
+    if ("serviceWorker" in navigator) {
+      console.log("SW")
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./js/serviceworker.js")
+          .then((reg) => console.log("service Worker: registered"))
+          .catch((err) => console.log(`service worker; Error:${err}`));
+      });
+    }
+  </script>
   <script src="js/app.js"></script>
 
 </body>

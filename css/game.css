@@ -152,7 +152,6 @@ header h1 {
   max-width: 100px;
 }
 
-
 @keyframes slidein {
   from {
     max-height: 0px;
@@ -166,7 +165,3 @@ header h1 {
     opacity: 1;
   }
 }
-
-@keyframes spin1 { 100% { transform:rotate(360deg); } }
-@keyframes spin2 { 100% { transform:rotate(-360deg); } }
-@keyframes idle { 100% {} }
