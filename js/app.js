@@ -44,6 +44,15 @@ const updateDom = () => {
   // current result
   if(currentResultState.length > 0) {
     document.querySelector(".currentResult").innerText = `${currentResultState}`;
+    document.querySelector(".currentResult").animate(
+      [
+        { opacity: 0, easing: "ease-out", transform: "scale(0)" },
+        { opacity: 1, easing: "ease-in", transform: "scale(1)" }
+      ], {
+        duration: 150,
+        iterations: 1
+      }
+    );
   }
 
   // current played choice by computer
@@ -91,6 +100,7 @@ const playGame = (humanChoice) => {
     console.info('Dom Loaded')
 
 
+
     updateDom();
 
     const elButtons = document.querySelectorAll(".ui button");
@@ -117,5 +127,6 @@ const playGame = (humanChoice) => {
       currentResultState = "READY?"
       updateDom();
     });
+
   });
 }());

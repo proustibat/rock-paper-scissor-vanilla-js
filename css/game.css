@@ -18,8 +18,18 @@
     display: block;
   }
 }
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh; /* fallback for Js load */
+  height: var(--doc-height);
+  height: 100%;
+}
 
 main {
+  padding: 0;
+  margin: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -54,6 +64,8 @@ header h1 {
   padding: 1em;
   font-size: 3em;
   font-weight: 900;
+  animation-duration:0.5s;
+  animation-name: slidein;
 }
 .humanScore { grid-area: humanScore; }
 .humanResult { grid-area: humanResult; }
@@ -139,3 +151,22 @@ header h1 {
   box-shadow: -2px -2px 4px rgb(0 0 0 / 10%), 2px 2px 4px rgb(0 0 0 / 25%);
   max-width: 100px;
 }
+
+
+@keyframes slidein {
+  from {
+    max-height: 0px;
+    transform: scale(0);
+    opacity: 0;
+
+  }
+  to {
+    max-height: 1000px;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spin1 { 100% { transform:rotate(360deg); } }
+@keyframes spin2 { 100% { transform:rotate(-360deg); } }
+@keyframes idle { 100% {} }
