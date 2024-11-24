@@ -1,5 +1,6 @@
 import utils from "./utils";
 import { CHOICES, base64Icons, winnerRules, resultMessages } from "./refs";
+import { checkInstall } from "./pwa-installation.js"
 
 const bestScoreKey = "best-score";
 
@@ -104,10 +105,11 @@ const playGame = (humanChoice) => {
   window.addEventListener('DOMContentLoaded', () => {
     console.info('Dom Loaded')
 
+    // init
     updateDom();
-
     updateBestScoreInDom();
 
+    // playing buttons
     const elButtons = document.querySelectorAll(".ui button");
     elButtons.forEach((button) => {
       button.addEventListener('click', (event) => {
@@ -123,6 +125,7 @@ const playGame = (humanChoice) => {
       })
     });
 
+    // Clear local storage button
     document.querySelector(".round-state .best-score button").addEventListener("click", (event) => {
       event.stopPropagation();
       if(confirm(`Do you wanna clear your best score? (${localStorage.getItem(bestScoreKey)})` )) {
@@ -132,6 +135,7 @@ const playGame = (humanChoice) => {
       }
     })
 
+    // reset game button
     const resetButton = document.querySelector(".reset button");
     resetButton.addEventListener('click', () => {
       humanScore = 0;
@@ -143,5 +147,8 @@ const playGame = (humanChoice) => {
       updateDom();
       updateBestScoreInDom();
     });
-  }, {once: true});
+
+    // PWA Installation
+    checkInstall();
+  });
 }());
