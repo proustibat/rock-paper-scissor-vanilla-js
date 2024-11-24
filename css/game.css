@@ -40,7 +40,7 @@ header {
 }
 
 header h1 {
-  font-size: 3em;
+  font-size: 2.8em;
   max-width: var(--max-width-content);
   margin: auto;
 }
@@ -58,7 +58,6 @@ header h1 {
 }
 .currentResult {
   grid-area: resultMessage;
-  /*padding: 1em;*/
   font-size: 3em;
   font-weight: 900;
   animation-duration:0.5s;
@@ -119,6 +118,42 @@ header h1 {
   align-items: center;
 }
 
+.round-container {
+  box-shadow: -2px -2px 4px rgb(0 0 0 / 10%), 2px 2px 4px rgb(0 0 0 / 25%);
+}
+
+.round-state {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: var(--max-width-content);
+  margin: auto;
+  font-size: 1.3em;
+  padding: 7px 0;
+}
+
+.round-state p {
+  margin: 0;
+  padding: 0;
+}
+
+.best-score {
+  display: flex;
+  align-items: center;
+}
+
+.best-score button {
+  border: none;
+  outline: none;
+  background: none;
+  display: flex;
+  justify-content: center;
+}
+.best-score button img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
 
 .ui {
   padding: 1em;
@@ -148,7 +183,7 @@ header h1 {
   padding: 1.1em;
   border: none;
   box-shadow: -2px -2px 4px rgb(0 0 0 / 10%), 2px 2px 4px rgb(0 0 0 / 25%);
-  max-width: 100px;
+  max-width: 70px;
 }
 
 @keyframes slidein {

@@ -30,6 +30,8 @@ module.exports = merge(common, {
         { from: '404.html', to: '404.html' },
         { from: 'manifest.json', to: 'manifest.json' },
         { from: 'js/serviceworker.js', to: 'js/serviceworker.js' },
+        { from: 'js/utils.js', to: 'js/utils.js' },
+        { from: 'js/refs.js', to: 'js/refs.js' },
       ],
     }),
   ],
