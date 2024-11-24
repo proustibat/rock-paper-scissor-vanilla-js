@@ -30,9 +30,6 @@ body {
 main {
   padding: 0;
   margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   touch-action: manipulation;
 }
 header {
@@ -61,7 +58,7 @@ header h1 {
 }
 .currentResult {
   grid-area: resultMessage;
-  padding: 1em;
+  /*padding: 1em;*/
   font-size: 3em;
   font-weight: 900;
   animation-duration:0.5s;
@@ -124,9 +121,11 @@ header h1 {
 
 
 .ui {
-  margin-top: auto;
   padding: 1em;
   background: #fb6542;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .ui .ui-container {
