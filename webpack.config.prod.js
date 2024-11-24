@@ -20,11 +20,13 @@ module.exports = merge(common, {
       patterns: [
         { from: 'img', to: 'img' },
         { from: 'css', to: 'css' },
+        { from: 'fonts', to: 'fonts' },
         { from: 'js/vendor', to: 'js/vendor' },
         { from: 'icon.svg', to: 'icon.svg' },
         { from: 'favicon.ico', to: 'favicon.ico' },
         { from: 'robots.txt', to: 'robots.txt' },
         { from: 'icon.png', to: 'icon.png' },
+        { from: 'rock-paper-scissors.png', to: 'rock-paper-scissors.png' },
         { from: '404.html', to: '404.html' },
         { from: 'manifest.json', to: 'manifest.json' },
         { from: 'js/serviceworker.js', to: 'js/serviceworker.js' },
